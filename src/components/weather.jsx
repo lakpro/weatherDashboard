@@ -2,10 +2,11 @@ import { useState, useEffect } from "react";
 import { useWeatherContext } from "../context/weatherContext";
 import ResetButton from "./reset";
 import FetchStatus from "./status";
+import Forecast from "./forecast";
 
-const WeatherInfo = () => {
+const Weather = () => {
   const { weatherData, error } = useWeatherContext();
-  // Initialize unit state based on localStorage, default to "C"
+
   const [unit, setUnit] = useState(localStorage.getItem("tempUnit") || "C");
 
   if (!weatherData || error || weatherData.error) return null;
@@ -58,36 +59,7 @@ const WeatherInfo = () => {
         </button>
       </h3>
 
-      {forecast && (
-        <div className="mt-6">
-          <h2 className="text-xl font-bold text-white mb-2">5-Day Forecast</h2>
-          <div className="flex flex-wrap items-center justify-center gap-4 mb-4">
-            {forecast.map((day, index) => (
-              <div
-                key={index}
-                className="bg-white/10 text-white p-3 w-[130px] rounded-lg flex flex-col items-center"
-              >
-                <p className="text-sm">
-                  {new Date(day.date).toLocaleDateString(undefined, {
-                    weekday: "short",
-                    day: "numeric",
-                    month: "short",
-                  })}
-                </p>{" "}
-                <img
-                  src={`http://openweathermap.org/img/wn/${day.icon}@2x.png`}
-                  alt="icon"
-                  className="w-12 h-12"
-                />
-                <p>{day.weather}</p>
-                <p className="font-bold">
-                  {day.temp}°{unit}
-                </p>
-              </div>
-            ))}
-          </div>
-        </div>
-      )}
+      {forecast && <Forecast forecast={forecast} unit={unit} />}
 
       <ResetButton />
       <FetchStatus />
@@ -95,4 +67,4 @@ const WeatherInfo = () => {
   );
 };
 
-export default WeatherInfo;
+export default Weather;

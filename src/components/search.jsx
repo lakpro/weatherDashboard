@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { useWeatherContext } from "../context/weatherContext";
 
-const SearchInput = () => {
+const Search = () => {
   const { fetchWeather } = useWeatherContext();
   const [input, setInput] = useState("");
 
@@ -30,4 +30,4 @@ const SearchInput = () => {
   );
 };
 
-export default SearchInput;
+export default Search;

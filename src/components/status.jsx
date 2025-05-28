@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { useWeatherContext } from "../context/weatherContext";
 
-const StatusMessage = () => {
+const Status = () => {
   const { loading, error, lastUpdated } = useWeatherContext();
   const [now, setNow] = useState(new Date());
 
@@ -32,4 +32,4 @@ const StatusMessage = () => {
   );
 };
 
-export default StatusMessage;
+export default Status;

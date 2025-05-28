@@ -1,6 +1,6 @@
 import { useWeatherContext } from "../context/weatherContext";
 
-const ErrorDisplay = () => {
+const Error = () => {
   const { error, weatherData, loading } = useWeatherContext();
 
   // No error and valid data, nothing to show
@@ -28,4 +28,4 @@ const ErrorDisplay = () => {
   );
 };
 
-export default ErrorDisplay;
+export default Error;
