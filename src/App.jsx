@@ -31,7 +31,7 @@ const WeatherMain = () => {
         style={{ backgroundImage: `url(${bg})` }}
       />
       <div className="min-h-screen w-full flex flex-col items-center justify-center py-10 px-4">
-        <div className="z-10 relative box bg-black/50 backdrop-blur-md p-5 rounded-lg text-center shadow-[0_16px_60px_rgba(0,0,0,0.6)] w-[90vw] max-w-3xl my-4">
+        <div className="z-10 relative box bg-black/50 backdrop-blur-md p-5 rounded-lg text-center shadow-[0_16px_60px_rgba(0,0,0,0.6)] w-[90vw] max-w-4xl my-4">
           <h1 className="text-3xl font-bold text-white my-4">
             Hey, Good {greeting()}
           </h1>
