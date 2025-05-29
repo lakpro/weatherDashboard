@@ -51,6 +51,7 @@ export const fetchWeatherData = async (cityName, unit = "metric") => {
       temp: data.main.temp,
       icon: icon,
       imgUrl: imgUrl,
+      weather: data.weather[0].main,
       humidity: data.main.humidity,
       windSpeed: data.wind.speed,
       forecast: dailyForecast.map((item) => ({

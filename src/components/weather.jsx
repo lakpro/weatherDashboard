@@ -22,6 +22,8 @@ const Weather = () => {
     time,
   } = weatherData;
 
+  console.log(weatherData);
+
   const toggleUnit = () => {
     setUnit((prev) => {
       const newUnit = prev === "C" ? "F" : "C";
